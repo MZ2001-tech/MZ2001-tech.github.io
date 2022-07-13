@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+      *{
+    margin: 0;
+    padding:0;
+  }
+  body{
+    background-image: url(Form_Background.jpg);
+  }
+ .Content {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: grey;
+    border: 1px solid;
+    text-align: center;
+ }
+ .G2{
+    padding: 100px;
+ }
+ ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color: grey;
+    opacity: 0.8;
+
+}
+
+
+li{
+    float: left;
+}
+
+li a{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+li a:hover{
+    background-color: blue;
+}
+
+li{
+    border-right: 1px solid black;
+   
+}
+ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.button{
+    text-align: center;
+}
+
+.Header{
+    margin-top: 100px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="Header"><h3 style="text-align:center,">Feedback!</h3></div>
+    <ul>
+        <li><a href ="index.html" target="_self">Home</a></li>
+        <li> <a href="Interest.html" target="_self">Interest</a></li>
+        <li><a href="myself.html" target="_self">Myself</a></li>
+        <li><a href="Form.html" target="_self">Feedback</a></li>
+    </ul>
+     
+    <div class="Content">
+        <div>
+            <form id="form" name ="Form" method="get" onsubmit="return Validate()" onsubmit ="return validate()">
+            
+                <label for="Name">Name:</label>
+                <input type = "text" id="N" placeholder="Name" name ="Name" required><br><br>
+                 
+                <label for="Gender">Gender:</label><br>
+                <input type="checkbox" id ="Check1"  class ="G1" value="1" name ="Gender1"  onclick="selectOnlyThis(this.id)">
+                <label for="Gender1" >Male</label>
+                <input type="checkbox"  id ="Check2"  class ="G2"  value="2" name ="Gender2" onclick="selectOnlyThis(this.id)">
+                <label for="Gender1">Female</label><br><br>
+    
+                <label for="comment">What are your thoughts? :</label><br>
+                <textarea name="Comments" id="textarea" cols="30" rows="10" placeholder ="comments" required></textarea><br><br>
+    
+                <label for="Rad">Do you like the web site:</label><br>
+             <label for="Selection">Yes</label>
+             <input type="radio" id="rad" name="Selection" name="radio1">
+             <label for="Selection">No</label>
+             <input type="radio"  id ="rad"  value ="2" name ="Selection" name ="radio2"><br><br>
+    
+               <div class ="button"><input type="submit" value = "Submit"></div>
+                
+               
+            
+    
+    
+             </form>
+        </div>
+        
+    </div>
+        <script>
+           function selectOnlyThis(id) {
+    for (var i = 1;i <= 2; i++)
+    {
+        document.getElementById("Check" + i).checked = false;
+    }
+    document.getElementById(id).checked = true;
+}
+
+function Validate(){
+    var valid = false;
+
+    var x =document.Form.Selection;
+
+    for(var i =0; i < x.length;i ++){
+        if(x[i].checked){
+            valid =true;
+            break;
+        }
+
+    }
+    if (valid){
+        alert("Thank you");
+    }
+    else{
+        alert("please select an option");
+        return false;
+    }
+
+    if(document.getElementById("Check1").checked){
+          valid = true;
+    }
+    else if(document.getElementById("Check2").checked) {
+           valid = true;
+    }
+
+    if (valid){
+        alert("For Filling in the form.");
+    }
+    else{
+        alert("Please select your gender");
+        return false;
+    }
+   
+}
+        </script>
+             
+</body>
+</html>

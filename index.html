@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainPage</title>
+    <style>
+   *{
+    padding:0;
+    margin:0;
+}
+body{
+    background-image: url(Background\ main.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    height:100vh;
+    
+}
+.audio{
+    margin-top: 50px;
+}
+.caption{
+    text-align:center;
+    margin: 100px auto;
+    color: white;
+}
+.centre{
+    width: 400px;
+    height: 100px;
+    margin: 200px auto;
+    background: grey;
+    position: relative;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 25px;
+    opacity: 0.8;
+}
+
+.centre h2{
+    border-bottom: 1px solid silver;
+}
+
+ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color: grey;
+    opacity: 0.8;
+
+}
+
+li{
+    float: left;
+}
+
+li a{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+li a:hover{
+    background-color: blue;
+}
+
+li{
+    border-right: 1px solid black;
+   
+}
+ul {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+::-webkit-scrollbar{
+    
+    width:2em;
+}
+
+
+::-webkit-scrollbar{
+    width:20px;
+}
+
+::-webkit-scrollbar{
+    box-shadow: insert 0 0 5px grey;
+    border-radius: 10px;
+    opacity: 0.9;
+    
+}
+::-webkit-scrollbar{
+    background: black;
+    border-radius: 10px;
+    
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: darkblue;
+}
+
+
+
+    </style>
+</head>
+<body>
+     <div class="audio">
+     <audio controls autoplay>
+    <source src ="m78.mp3">
+    <source src ="m78.wav>">
+     This browser does not support HTML5 audio
+     </audio>
+    </div>
+     <div class="caption"><h1>Welcome</h1></div>
+     <div class ="centre">
+          <h2>Hello</h2>
+           <button onclick ="typeWriter()">Who am I</button>
+          <p id="demo" class="dis"></p>
+    
+    </div>
+
+    <ul>
+        <li><a href ="index.html" target="_self">Home</a></li>
+        <li> <a href="Interest.html" target="_self">Interest</a></li>
+        <li><a href="myself.html" target="_self">Myself</a></li>
+        <li><a href="Form.html" target="_self">Feedback</a></li>
+    </ul>
+
+    <script>
+        var i = 0;
+var txt = 'Hello My name is Zikry I am a student at Uitm Kedah. Persuing a diploma in Computer Science and welcome to my  webpage.';
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+    </script>
+
+</body>
+</html>
